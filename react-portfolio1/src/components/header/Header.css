@@ -2,11 +2,25 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #1d1d1d;
-    color: white;
+    /* background-color: #1d1d1d; */
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    /* color: white; */
+    color: gray;
     position: fixed;
     width: 100%;
     z-index: 10;
+    height: 56px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 55px;
+    margin-right: 10px;
 }
 
 header .logo h3 {
@@ -21,8 +35,9 @@ header nav ul li {
 
 header nav ul li a {
     text-decoration: none;
-    color: white;
+    /* color: white; */
     transition: all 0.2s;
+    color: gray;
 }
 
 header nav ul li a:hover {

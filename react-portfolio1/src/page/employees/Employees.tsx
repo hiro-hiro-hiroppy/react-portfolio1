@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../../components/Header'
+import Header from '../../components/header/Header'
+import Sidebar from '../../components/sidebar/Sidebar';
+import "./Employees.css"
 
 interface Employee {
   rowNo: number,
@@ -31,8 +33,10 @@ const Employees = () => {
   return (
     <>
       <Header />
-
-      <div className="buttonArea">
+      
+      <Sidebar />
+      
+      {/* <div className="buttonArea">
         <label htmlFor="">検索</label>
         <input type="text" name="" id="" />
         <button>新規作成</button>
@@ -49,7 +53,7 @@ const Employees = () => {
           <div></div>
         </div>
 
-      </div>
+      </div> */}
     </>
   )
 }

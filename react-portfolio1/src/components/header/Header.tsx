@@ -1,11 +1,12 @@
 import React from 'react'
 import './Header.css';
+import Icon from "../../images/reactIcon.png"
 
 const Header = () => {
   return (
     <header>
       <div className="logo">
-        {/* <img src="./img/logo192.png" alt="ロゴ" /> */}
+        <img src={Icon} alt="ロゴ" />
         <h3>React ポートフォリオ</h3>
       </div>
       <nav>

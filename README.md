@@ -7,9 +7,9 @@
 - レスポンシブ
 - Jest
 - styled-components
-- react-material
-- react-hooks
+- Material UI OK
+- react-hooks OK
 - webpack
-- サイドバー
+- サイドバー OK
 - モーダル
 - CRUD

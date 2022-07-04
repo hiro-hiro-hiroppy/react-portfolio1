@@ -1,0 +1,56 @@
+.inputText {
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.inputField {
+    /* display: flex;
+    align-items: center; */
+    margin-bottom: 10px;
+}
+
+.inputField label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.createButton {
+    background-color: #1b66a7;
+    /* width: 100%; */
+    margin-left: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 30px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.createButton:hover {
+    background-color: #175892;
+}
+
+.dataList li {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .dataList li input {
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+.deleteButton {
+    padding: 10px 20px;
+    background-color: red !important;
+    white-space: nowrap;
+}

@@ -3,25 +3,25 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import './Login.css';
 
 interface LoginForm {
-  userName: string,
+  //userName: string,
   mailAddress: string,
   password: string
 };
 
 interface LoginErrorForm {
-  userName: string,
+  //userName: string,
   mailAddress: string,
   password: string
 };
 
 const Login = () => {
   const initialValues: LoginForm = {
-    userName: "",
+    //userName: "",
     mailAddress: "",
     password: "",
   };
   const initialLoginErrorValues: LoginErrorForm = {
-    userName: "",
+    //userName: "",
     mailAddress: "",
     password: "",
   };
@@ -37,9 +37,9 @@ const Login = () => {
 
     let changeValues: LoginForm;
     switch (name) {
-      case "userName":
-        changeValues = { ...formValues, userName: value };
-        break;
+      // case "userName":
+      //   changeValues = { ...formValues, userName: value };
+      //   break;
       case "mailAddress":
         changeValues = { ...formValues, mailAddress: value };
         break;
@@ -62,7 +62,8 @@ const Login = () => {
     const validateResult = validate(formValues);
     setFormErrors(validateResult);
 
-    if (!validateResult.userName && !validateResult.mailAddress && !validateResult.password) {
+    // if (!validateResult.userName && !validateResult.mailAddress && !validateResult.password) {
+    if (!validateResult.mailAddress && !validateResult.password) {
       console.log("ログイン成功");
       window.location.href = "/employees"
     } else {
@@ -75,13 +76,15 @@ const Login = () => {
     const regexMailAddress: RegExp = /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
     const regexPassword: RegExp = /^[a-zA-Z0-9!-/:-@¥[-`{-~]*$/;
 
-    if (!values.userName) {
-      errors.userName = "ユーザー名を入力してください。";
-    }
+    // if (!values.userName) {
+    //   errors.userName = "ユーザー名を入力してください。";
+    // }
     if (!values.mailAddress) {
       errors.mailAddress = "メールアドレスを入力してください。";
     } else if (!regexMailAddress.test(values.mailAddress)) {
       errors.mailAddress = "正しいメールアドレスを入力してください。"
+    } else if (values.mailAddress !== "test@gmail.com") {
+      errors.mailAddress = "対象のメールアドレスのレコードが存在しません。"
     }
     if (!values.password) {
       errors.password = "パスワードを入力してください。";
@@ -91,6 +94,8 @@ const Login = () => {
       errors.password = "4文字以上15文字以下のパスワードを入力してください。";
     } else if (!regexPassword.test(values.password)) {
       errors.password = "半角英数記号のみ利用できます。";
+    } else if (values.mailAddress === "test") {
+      errors.mailAddress = "対象のパスワードのレコードが存在しません。"
     }
 
     return errors;
@@ -102,19 +107,19 @@ const Login = () => {
         <h1>ログインフォーム</h1>
         <hr />
         <div className="uiForm">
-          <div className="formField">
+          {/* <div className="formField">
             <label>ユーザー名</label>
             <input type="text" name="userName" placeholder='ユーザー名' onChange={(e) => handleChange(e)} />
           </div>
-          <p className="errorMsg">{formErrors.userName}</p>
+          <p className="errorMsg">{formErrors.userName}</p> */}
           <div className="formField">
             <label>メールアドレス</label>
-            <input type="text" name="mailAddress" placeholder='メールアドレス' onChange={(e) => handleChange(e)} />
+            <input type="text" name="mailAddress" placeholder='test@gmail.com' onChange={(e) => handleChange(e)} />
           </div>
           <p className="errorMsg">{formErrors.mailAddress}</p>
           <div className="formField">
             <label>パスワード</label>
-            <input type="password" name="password" placeholder='パスワード' onChange={(e) => handleChange(e)} />
+            <input type="password" name="password" placeholder='test' onChange={(e) => handleChange(e)} />
           </div>
           <p className="errorMsg">{formErrors.password}</p>
 
